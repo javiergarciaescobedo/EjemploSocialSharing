@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -7,6 +9,14 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private socialSharing: SocialSharing) { }
+
+  regularSharing() {
+    this.socialSharing.share("Mi mensaje que comparto", null, null, null).then(() => {
+      console.log("Se ha compartido correctamente");
+    }).catch((error) => {
+      console.log("Se ha producido un error: " + error);
+    });
+  }
 
 }

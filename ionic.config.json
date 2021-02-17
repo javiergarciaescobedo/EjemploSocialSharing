@@ -1,5 +1,7 @@
 {
   "name": "EjemploSocialSharing",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
